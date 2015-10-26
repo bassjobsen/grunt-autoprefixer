@@ -77,7 +77,6 @@ module.exports = function(grunt) {
 
         var done = this.async();
         var finished = 0;
-        var processed = this.files.length;
 
         if (!this.files.length) {
             done();
@@ -129,7 +128,7 @@ module.exports = function(grunt) {
 
                     finished += 1;
 
-                    if (finished === processed) {
+                    if (finished === src.length) {
                         if (tally.sheets) {
                             grunt.log.ok(tally.sheets + ' ' + 'autoprefixed ' + grunt.util.pluralize(tally.sheets, 'stylesheet/stylesheets') + ' created.');
                         }
