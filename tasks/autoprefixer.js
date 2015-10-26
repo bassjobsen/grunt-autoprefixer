@@ -99,9 +99,11 @@ module.exports = function(grunt) {
 
                 return done();
             }
-            if(src.length > 1) 
+            
+            if(src.length > 1) {
                 processed += src.length - 1; 
             }
+            
             src.forEach(function(filepath) {
                 var dest = f.dest || filepath;
                 var input = grunt.file.read(filepath);
